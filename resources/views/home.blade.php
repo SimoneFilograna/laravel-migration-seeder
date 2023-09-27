@@ -43,7 +43,6 @@
                                         <td>{{($singleTrain->in_orario)? "SI" : "No"}}</td>                           
                                         <td>{{($singleTrain->cancellato)? "Si" : "No"}}</td>                           
                                         </tr>                                                           
-                                        
                                     @endif
                             @endforeach     
                         </tbody>
