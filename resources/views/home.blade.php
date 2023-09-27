@@ -25,20 +25,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $trains as $singleTrain)
-                                <tr>
-                                <th scope="row">#</th>
-                                <td>{{$singleTrain->azienda}}</td>
-                                <td>{{$singleTrain->data_partenza}}</td>                           
-                                <td>{{$singleTrain->stazione_partenza}}</td>                           
-                                <td>{{$singleTrain->stazione_arrivo}}</td>                           
-                                <td>{{$singleTrain->orario_partenza}}</td>                           
-                                <td>{{$singleTrain->orario_arrivo}}</td>                           
-                                <td>{{$singleTrain->codice_treno}}</td>                           
-                                <td>{{$singleTrain->numero_carrozze}}</td>                           
-                                <td>{{($singleTrain->in_orario)? "SI" : "No"}}</td>                           
-                                <td>{{($singleTrain->cancellato)? "Si" : "No"}}</td>                           
-                                </tr>                        
+                            @foreach ( $trains as $singleTrain)  
+                            
+                                    @if ( $singleTrain->data_partenza >= date('Y-m-d'))
+                                        <tr>
+                                        <th scope="row">#</th>
+                                        <td>{{$singleTrain->azienda}}</td>
+                                        <td>{{$singleTrain->data_partenza}}</td>                           
+                                        <td>{{$singleTrain->stazione_partenza}}</td>                           
+                                        <td>{{$singleTrain->stazione_arrivo}}</td>                           
+                                        <td>{{$singleTrain->orario_partenza}}</td>                           
+                                        <td>{{$singleTrain->orario_arrivo}}</td>                           
+                                        <td>{{$singleTrain->codice_treno}}</td>                           
+                                        <td>{{$singleTrain->numero_carrozze}}</td>                           
+                                        <td>{{($singleTrain->in_orario)? "SI" : "No"}}</td>                           
+                                        <td>{{($singleTrain->cancellato)? "Si" : "No"}}</td>                           
+                                        </tr>                                                           
+                                        
+                                    @endif
                             @endforeach     
                         </tbody>
                       </table>

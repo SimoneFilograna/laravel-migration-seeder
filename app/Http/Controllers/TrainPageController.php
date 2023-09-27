@@ -8,7 +8,7 @@ use App\Models\Train;
 class TrainPageController extends Controller
 {
     public function Index(){
-        $trains = train::all()->where("data_partenza",now()->toDateString());
+        $trains = train::all();
 
         return view('home', ["trains" => $trains]);
     }
