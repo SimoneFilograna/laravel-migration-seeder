@@ -3,12 +3,12 @@
 @include("partials.header")
 
 @section("content")
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col">
                 <table class="table">
                     <thead>
-                      <tr>
+                        <tr>
                         <th scope="col"></th>
                         <th scope="col">Azienda</th>
                         <th scope="col">Data partenza</th>
@@ -20,10 +20,9 @@
                         <th scope="col">Numero Carrozze</th>
                         <th scope="col">In orario</th>
                         <th scope="col">Cancellato</th>                      
-                      </tr>
+                        </tr>
                     </thead>
                     <tbody>
-
                         @foreach ( $trains as $singleTrain)
                             <tr>
                             <th scope="row">#</th>
@@ -35,8 +34,8 @@
                             <td>{{$singleTrain->orario_arrivo}}</td>                           
                             <td>{{$singleTrain->codice_treno}}</td>                           
                             <td>{{$singleTrain->numero_carrozze}}</td>                           
-                            <td>{{$singleTrain->in_orario}}</td>                           
-                            <td>{{$singleTrain->cancellato}}</td>                           
+                            <td>{{($singleTrain->in_orario)? "SI" : "No"}}</td>                           
+                            <td>{{($singleTrain->cancellato)? "Si" : "No"}}</td>                           
                             </tr>                        
                         @endforeach
                         
