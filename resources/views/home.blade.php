@@ -2,6 +2,8 @@
 
 @include("partials.header")
 
+@section("title", "Trains Departures")
+
 @section("content")
     <div class="container mt-5">
         <div class="row">
