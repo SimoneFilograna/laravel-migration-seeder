@@ -1,2 +1,10 @@
 @use "bootstrap";
 @use "@fortawesome/fontawesome-free/css/all.min.css";
+@use "./partials/main";
+@use "./partials/header";
+
+body{
+    background-image: url(/public/img/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
