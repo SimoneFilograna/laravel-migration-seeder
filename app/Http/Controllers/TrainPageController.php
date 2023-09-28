@@ -8,7 +8,7 @@ use App\Models\Train;
 class TrainPageController extends Controller
 {
     public function Index(){
-        $trains = train::all();
+        $trains = Train::all();
 
         // E' possibile evitare di utilizzare l'if utilizzando un query che
         // va a filtrare direttamente i dati passatici dalla variabile $trains
