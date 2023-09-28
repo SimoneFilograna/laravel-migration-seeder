@@ -10,6 +10,10 @@ class TrainPageController extends Controller
     public function Index(){
         $trains = train::all();
 
+        // E' possibile evitare di utilizzare l'if utilizzando un query che
+        // va a filtrare direttamente i dati passatici dalla variabile $trains
+        // ->where("data_partenza", now()->toDateString())
+
         return view('home', ["trains" => $trains]);
     }
 }
